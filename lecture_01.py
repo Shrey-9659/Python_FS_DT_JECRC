@@ -135,3 +135,26 @@
 # while number%7!=0:
 #     print(number)
 #     number += 1
+
+# Questions on while loop
+# Q1 : Print series of n natural numbers
+# Q2 : Print the sum of n natural numbers
+# Q3 : Reverse a number. Do not use type conversion. (123 -> 321)
+# Q4 : Check if the number is palindrome
+
+# Sol 3-4
+
+# userInput = int(input("Enter a number : "))
+# userValue = userInput
+# reverse = 0
+
+# while(userInput > 0):
+#     remainder = userInput%10
+#     reverse = reverse * 10 + remainder
+#     userInput = userInput//10
+# print(reverse)
+
+# if userValue == reverse :
+#     print("Number is palindrome")
+# else :
+#     print("Number is not")
