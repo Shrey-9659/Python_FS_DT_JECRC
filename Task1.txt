@@ -1,0 +1,40 @@
+The Project: "The Smart Cafe" Billing & Inventory System
+
+Project Overview
+Students will build a terminal-based program where a user can view a menu, place an order for multiple items, see their total bill, and update the cafe's stock.
+
+Key Requirements to Give Your Students
+1. The Setup (Data Types & Dictionaries):
+
+Create a dictionary called menu where the keys are item names (strings) and the values are prices (floats/integers).
+
+Create a second dictionary called stock with the same items as keys, and their available quantities (integers) as values.
+
+Initialize a variable total_bill = 0.
+
+2. The Order Loop (Loops & Control Statements):
+
+Use a while loop to keep the program running until the customer decides to checkout.
+
+Inside the loop, display the menu to the customer.
+
+Ask the customer to type the name or number of the item they want to buy.
+
+Validation & Updates (Dictionary Access & Control Statements):
+
+Check Availability: If the item exists in the menu and is in stock, proceed. If it's out of stock or doesn't exist, print a helpful warning message.
+
+Update Data: If available, add the price to total_bill and reduce the item's quantity in the stock dictionary by 1.
+
+Checkout (Exit Strategy):
+
+Provide a specific keyword (like 'checkout') to break out of the loop.
+
+When they check out, print their final total bill.
+
+
+----- Challenge Steps -----
+
+1. Apply a Discount: If the total_bill goes over $10, apply a 10% discount using a basic math calculation and an if statement.
+
+2. Track Quantities: Instead of ordering 1 item at a time, prompt the user for a quantity, check if the stock has enough units, and deduct that specific amount.
