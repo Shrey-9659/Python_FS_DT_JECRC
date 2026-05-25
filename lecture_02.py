@@ -87,12 +87,12 @@ i = 1
 # Dictionary -->
 
 # How to create
-# obj = {
-#     "name" : "Shrey",
-#     "university" : "LPU",
-#     "year" : 2026
-# }
-# How to add
+obj = {
+    "name" : "Shrey",
+    "university" : "LPU",
+    "year" : 2026
+}
+# How to add/update
 # obj["phone"] = 9876543210
 
 # How to access
@@ -105,4 +105,39 @@ i = 1
 # print(deletedValue)
 
 # del obj["name"]
+# print(obj)
+
+# print(obj.keys()) -- to get keys
+
+# print(obj.values()) -- to get values
+
+# print(obj.items()) -- to get individual key values pairs
+
+# for keys in obj: -- to iterate through keys
+#     print(keys)
+
+# for values in obj.values(): -- to iterate through values
+#     print(values)
+
+# for key,value in obj.items(): -- to iterate through both keys and values
+#     print(key, value)
+
+# Nested Dictionary
+# studentData = {
+#     1: {"name" : "mohit", "year" : 2026},
+#     2: {"name" : "rohit", "year" : 2025}
+# }
+
+# Check exist
+# print("name" in obj)
+
+# Length
+# print(len(obj))
+
+# Copy
+# newObj = obj.copy()
+# print(newObj)
+
+# Clear
+# obj.clear()
 # print(obj)
