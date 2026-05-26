@@ -113,10 +113,25 @@ set = {1,2}
 
 # EXCEPTION HANDLING
 
-# try:
-#     number = int(input("Enter a number : "))
-#     print(number)
-# except:
-#     print("Enter valid number")
-# finally:
-#     print("M hamesha run karunga")
+try:
+    number = 10%2
+    if number == 0:
+        raise Exception("Number is zero")
+    print(number)
+except ValueError:
+    print("Enter valid number")
+except ZeroDivisionError as e:
+    print(f"Cannot divide by zero : {e}")
+except Exception as e:
+    print(f"error : {e}")
+else:
+    print("Try executed successfully")
+finally:
+    print("M hamesha run karunga")
+
+# ZeroDivisionError
+# ValueError
+
+# Q1 : ATM machine
+# Balance : 2000
+# Withdrawl is more than balance throw error "-----"
