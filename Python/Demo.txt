@@ -1,0 +1,4 @@
+Shrey, 100
+Rohit, 90
+Khushi, 80
+Piyush, 70
