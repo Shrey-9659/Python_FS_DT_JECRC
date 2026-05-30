@@ -1,0 +1,30 @@
+Installing Virtual Env :
+python3 -m venv env
+
+Activating Virtual Env :
+
+Windows : env\Scripts\activate
+
+MacOS : source env/bin/activate
+
+Installing Django
+
+pip install django
+
+Version Checking
+
+django-admin -—version
+
+Creating a project
+
+django-admin startproject <projectname>
+
+python -m django startproject myproject
+
+Go inside the project directory:
+
+cd myproject
+
+Running a project
+
+python manage.py runserver

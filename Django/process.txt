@@ -1,0 +1,53 @@
+Step 1 :
+Create a virtual environment
+code : (python3 -m venv env) || (python -m venv env)
+
+Step 2 :
+Activate the virtual environment
+code : (source env/bin/activate) || (env/Scripts/activate)
+
+Step 3 : 
+Install django
+code : (pip install django)
+
+Step 4 : 
+Create your project
+code : (django-admin startproject projectname)
+code : (python -m django startproject projectname)
+
+Step 5 :
+Go inside the project folder
+code : cd foldername
+
+Now you will see 1 file named manage.py and a folder with the same name as of your project. I will refer the inner folder as APP FOLDER.
+
+-------------------------------
+To run the project, make sure you are in the project folder where you can see manage.py file
+code : python manage.py runserver
+-------------------------------
+If you want to create routes like /about, /contact we will create a views.py file inside of our app folder (Ye sirf abhi use kar rahe hai, baad m we will see k isko aur clean tarike se kaise likhte hai).
+
+1. inside views write your business logics.
+
+2. in urls.py file mention those routes. Make sure k tumne views ko import karte time usko location sahi likhi ho.
+-------------------------------
+To render HTML file
+1. In your project folder (where manage.py file is present), create a file with the name of template, and inside of it create your html files.
+2. Jo likhna hai html file m likho
+3. You have to mention the location of your template folder inside of setting.py. Settings.py mein TEMPLATES k andr ek key hai DIRS, usko andr simply write 'template'. Apan ne base location mein banaya hai folder isiliye sirf template likhne se kaam ho jaega, else proper location mention karni hogi
+4. Once done, go to views file aur jis bhi route mein use render karni hai html file vaha return kardo isko. Code for it is :
+return render(request, 'filename.html')
+-------------------------------
+How you can dynamically change data in your html file. 
+Ek dm aasan hai, dekho data apan k pass aaega user se. uss data ko apan store kar lenge. abhi k liye apan ne apni taraf se hi data le liya hai (line 13 - 16 of views.py file). 
+Ab iss data ko apan ko html file m bhejna hoga aur html file ko ye data use karna hoga.
+To send data to html file. simply use:
+return render(request, 'filename.html', data)
+And now how can you use this data inside html file.
+Jidhar bhi tum dynamically data change karna chahte ho usko udhar double curly braces k andr jo data use karna hai uss key ka naam likh do
+eg : 
+<h1>For more details contact on the no. 1234567890</h1>
+I want that ye number mujhe mil raha hai and mene isko phone naam ki key mein store kar diya. toh simply I will change my html to:
+<h1>For more details contact on the no. {{phone}}</h1>
+
+-------------------------------
