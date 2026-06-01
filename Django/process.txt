@@ -51,3 +51,18 @@ I want that ye number mujhe mil raha hai and mene isko phone naam ki key mein st
 <h1>For more details contact on the no. {{phone}}</h1>
 
 -------------------------------
+
+To create a new app :
+code : python manage.py startapp appName
+
+Once the app is created, mention the name of the app inside of settings.py > INSTALLED_APPS
+
+In urls.py define your routes and make sure to import the file as well.
+In my case the app name was my_auth app, toh import command hoga
+code : from my_auth_app.views import *
+* ka matlab hai, import everything from views file
+
+
+TASK 01 :
+Create pages including registration and login
+1 : Let a user register on the page, once the registration is done, redirect them to login page and store the information in "user.txt" (for now). Once user tries to login in to the page, check the credentials from the data available in user.txt, if correct, send them to profile page where show basic info like name, email, number, etc. Else tell. "Login failed, and redirect them to signup page"
