@@ -1,5 +1,5 @@
 """
-URL configuration for formdata project.
+URL configuration for authproject project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/6.0/topics/http/urls/
@@ -16,14 +16,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from my_auth_app.views import *
+from django.conf import settings
+from django.conf.urls.static import static
+from user_auth.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("contact/", contact),
-    path("getsignup/", getsignup),
-    path("postsignup/", postsignup),
-    path("submit/", submit),
-    path("postsubmit/", postsubmit),
-
-]
+    path('register/', register),
+    path('submit/', submit),
+    path('login/', login),
+    path('profile/', profile),
+] + static(
+    settings.MODEL_URL,
+    document_root = settings.MODEL_ROOT
+)

@@ -1,0 +1,33 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="{% static "user_auth/style.css" %}">
+</head>
+<body>
+
+    <div class="container">
+        <form class="register-form" method="POST", action="/profile/" enctype="multipart/form-data">
+            {% csrf_token %}
+            <h2>Login Form</h2>
+
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Choose a username" required>
+            </div>
+
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Create a password" required>
+            </div>
+
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,8 @@
+| Operation            | Django ORM Method                                 |
+| -------------------- | ------------------------------------------------- |
+| Create               | `create()`                                        |
+| Read                 | `all()`, `get(con)`, `filter(con)`, `first()`, `last()`
+| Update               | `save()`, `update(con)`, `update_or_create(con)`       
+| Delete               | `delete(con)`                                        |
+| Check Exists         | `exists()`                                        |
+| Count Records        | `count()`                                         |
