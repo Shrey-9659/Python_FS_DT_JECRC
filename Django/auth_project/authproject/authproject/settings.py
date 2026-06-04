@@ -117,5 +117,5 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-MODEL_URL = "/models/"
-MODEL_ROOT = BASE_DIR/"models"
+MEDIA_URL = "/media/"
+MEDIA_ROOT = BASE_DIR/"media"

@@ -24,9 +24,11 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('register/', register),
     path('submit/', submit),
-    path('login/', login),
-    path('profile/', profile),
+    path('login/', login_view, name="login_view"),
+    path('profile/', profile, name="profile"),
+    path('delete/<str:username>', delete, name="delete"),
+    path('update/<str:username>', update, name="update"),
 ] + static(
-    settings.MODEL_URL,
-    document_root = settings.MODEL_ROOT
+    settings.MEDIA_URL,
+    document_root = settings.MEDIA_ROOT
 )

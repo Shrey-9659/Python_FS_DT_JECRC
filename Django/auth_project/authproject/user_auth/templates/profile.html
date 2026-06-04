@@ -1,0 +1,36 @@
+{% load static %}
+
+<!doctype html>
+<html>
+  <head>
+    <title>User Profile</title>
+    <link rel="stylesheet" href="{% static 'user_auth/profile.css' %}" />
+  </head>
+  <body>
+    <div class="profile-container">
+      <div class="profile-card">
+        <img
+          src="{{ user.profile_image.url }}"
+          alt="Profile Image"
+          class="profile-image"
+        />
+
+        <h2>{{ user.fullname }}</h2>
+
+        <div class="profile-info">
+          <p><strong>Username:</strong> {{ user.username }}</p>
+          <p><strong>Email:</strong> {{ user.email }}</p>
+        </div>
+
+        <div class="profile-actions">
+          <a href="{% url 'update' user.username %}" class="btn update-btn"> Update Profile </a>
+
+          <form action="{% url 'delete' user.username %}" method="POST">
+            {% csrf_token %}
+            <button type="submit" class="btn delete-btn">Delete Account</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

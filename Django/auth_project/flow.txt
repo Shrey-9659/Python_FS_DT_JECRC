@@ -1,0 +1,31 @@
+In todays lecture :
+uptil now we were sdtoring the data as it is, which is not a good practice.
+To store the password in hashed format we use the method create_user. 
+This method can be used in django default model "User"
+to import this model use :
+code : from django.contrib.auth.models import User
+and add all the user data in this particular model.
+
+After that we covered authentication, login
+authentication basically checked if the user is there in the database or not
+if it is there, it returns the user else throws None.
+to import authentication and login code is :
+from django.contrib.auth import authenticate, login
+
+How to use authentication :
+user = authenticate(
+        request,
+        model_username = form_username,
+        model_password = form_password
+    )
+
+How to use login :
+login(request, user)
+
+Now, when we refresh the page or reload it, all the user imformations are gone as we are not storing it anywhere. To keep the information intact we use a decorator @login_required and to import this decorator the code is :
+from django.contrib.auth.decorators import login_required
+
+How to use it :
+@login_required
+def profile(request):
+    return render(request, "profile.html", {"user" : request.user})
