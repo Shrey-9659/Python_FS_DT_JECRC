@@ -10,11 +10,32 @@
       <h1>Update Page</h1>
     </center>
     <hr />
-    <form action="/submit/" method="post">
+    <form action="/update_details/" method="post">
       {% csrf_token %}
-      <input type="text" name="fullname" id="" placeholder="fullname" value="1234567" />
-      <input type="text" name="username" id="" placeholder="username" />
-      <input type="email" name="email" id="" placeholder="email" />
+
+      <input
+      type="text"
+      name="fullname"
+      id=""
+      placeholder="fullname"
+      value={{request.user.first_name}}
+      />
+
+      <input
+      type="text"
+      name="username"
+      id=""
+      placeholder="username"
+      value={{request.user.username}}
+      />
+
+      <input
+      type="email"
+      name="email"
+      id=""
+      placeholder="email"
+      value={{request.user.email}}
+      />
       <button type="submit">Update Account</button>
     </form>
   </body>

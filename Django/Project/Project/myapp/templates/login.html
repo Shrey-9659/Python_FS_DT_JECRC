@@ -13,7 +13,7 @@
         {% endif %}
     </center>
     <hr>
-    <form action="/dashboard/" method="post">
+    <form action="/check_login/" method="post">
         {% csrf_token %}
         <input type="text" name="username" id="" placeholder="username">
         <input type="password" name="password" id="" placeholder="password">

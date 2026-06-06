@@ -23,6 +23,10 @@ urlpatterns = [
     path("", register, name="register"),
     path("submit/", submit, name="submit"),
     path("login/", login_page, name="login_page"),
+    path("check_login/", check_login, name="check_login"),
     path("dashboard/", dashboard, name="dashboard"),
-    path("update/<str:username>", update, name="update")
+    path("logout_user/", logout_user, name="logout_user"),
+    path("delete_user/", delete_user, name="delete_user"),
+    path("update_user/", update_user, name="update_user"),
+    path("update_details/", update_details, name="update_details")
 ]

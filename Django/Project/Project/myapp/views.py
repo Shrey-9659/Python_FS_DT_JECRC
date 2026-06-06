@@ -1,6 +1,7 @@
 from django.shortcuts import render, HttpResponse, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 
 # ---------------------------
 # Create your views here.
@@ -26,7 +27,7 @@ def submit(request):
 def login_page(request):
     return render(request, "login.html")
 
-def dashboard(request):
+def check_login(request):
     user_name = request.POST.get("username")
     pass_word = request.POST.get("password")
     
@@ -36,10 +37,38 @@ def dashboard(request):
         password = pass_word
     )
     if(user != None):
-        return render(request, "dashboard.html", {"user" : user})
+        login(request, user)
+        return redirect("dashboard")
 
     return render(request, "login.html", {"message" : "Invalid Credentials"})
 
+@login_required
+def dashboard(request):
+    return render(request, "dashboard.html")
 
-def update(request):
+@login_required
+def logout_user(request):
+    logout(request)
+    return redirect("login_page")
+
+@login_required
+def delete_user(request):
+    request.user.delete()
+    return redirect("register")
+
+
+@login_required
+def update_user(request):
+    print(request.user.email)
     return render(request, "update.html")
+
+@login_required
+def update_details(request):
+    new_name = request.POST.get("fullname")
+    new_username = request.POST.get("username")
+    new_email = request.POST.get("email")
+    request.user.username = new_username
+    request.user.first_name = new_name
+    request.user.email = new_email
+    request.user.save()
+    return redirect("login_page")
