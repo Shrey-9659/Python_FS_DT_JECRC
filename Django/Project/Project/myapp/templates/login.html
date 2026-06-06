@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>Login Page</h1>
+        {% if message %}
+            <p style="color:red">{{message}}</p>
+        {% endif %}
+    </center>
+    <hr>
+    <form action="/dashboard/" method="post">
+        {% csrf_token %}
+        <input type="text" name="username" id="" placeholder="username">
+        <input type="password" name="password" id="" placeholder="password">
+        <button type="submit">Login</button>
+    </form>
+</body>
+</html>

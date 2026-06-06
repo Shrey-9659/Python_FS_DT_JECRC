@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>Dashboard</h1>
+    </center>
+    <hr>
+    <strong>Full name : </strong> <span>{{user.first_name}}</span> <br>
+    <strong>Username : </strong> <span>{{user.username}}</span> <br>
+    <strong>Email : </strong> <span>{{user.email}}</span> <br>
+    <br>
+    
+     <a href="/delete/">
+        <button style="padding: 5px, margin:5px"> Delete Account</button>
+     </a>  
+     <a href={% url "update" user.username%}>
+        <button style="padding: 5px, margin:5px"> Update Details</button>
+     </a>  
+     <a href="/logout/">
+        <button style="padding: 5px, margin:5px"> Logout</button>
+     </a>  
+</body>
+</html>
