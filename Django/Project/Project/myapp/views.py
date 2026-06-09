@@ -2,7 +2,8 @@ from django.shortcuts import render, HttpResponse, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-from .models import Postblogs
+from .models import Postblogs, ProfilePicture
+
 
 # ---------------------------
 # Create your views here.
@@ -15,12 +16,18 @@ def submit(request):
     username = request.POST.get("username")
     email = request.POST.get("email")
     password = request.POST.get("password")
+    picture = request.FILES.get("profile")
     
-    User.objects.create_user(
+    new_user = User.objects.create_user(
         first_name = fullname,
         username= username,
         email= email,
         password=password
+    )
+
+    ProfilePicture.objects.create(
+        profile = picture,
+        user = new_user
     )
 
     return render(request, "submit.html")
