@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>Post your blog</h1>
+    </center>
+    <hr>
+    <form method="POST">
+        {% csrf_token %}
+        <div>
+            <input type="text" name="title" id="" placeholder="Enter your title">
+        </div>
+        <br>
+        <div>
+            <textarea name="content" id="" cols="30" rows="10" placeholder="Enter content"></textarea>
+        </div>
+        <button>Submit</button>
+    </form>
+
+</body>
+</html>

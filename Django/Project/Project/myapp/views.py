@@ -2,6 +2,7 @@ from django.shortcuts import render, HttpResponse, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from .models import Postblogs
 
 # ---------------------------
 # Create your views here.
@@ -72,3 +73,27 @@ def update_details(request):
     request.user.email = new_email
     request.user.save()
     return redirect("login_page")
+
+@login_required
+def postblogs(request):
+    if(request.method == "GET"):
+        return render(request, "postblogs.html")
+    blog_title = request.POST.get("title")
+    blog_content = request.POST.get("content")
+    Postblogs.objects.create(
+        title = blog_title,
+        content = blog_content,
+        author = request.user
+    )
+    return redirect("dashboard")
+
+@login_required
+def showblogs(request):
+    user_blogs = request.user.blogs.all()
+    
+    return render(request, "showblogs.html", {"blogs" : user_blogs})
+
+
+def blogs(request):
+    all_blogs = Postblogs.objects.all().order_by("-createdAt")
+    return render(request, "allblogs.html", {"blogs": all_blogs})

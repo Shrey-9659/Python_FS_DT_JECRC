@@ -28,5 +28,8 @@ urlpatterns = [
     path("logout_user/", logout_user, name="logout_user"),
     path("delete_user/", delete_user, name="delete_user"),
     path("update_user/", update_user, name="update_user"),
-    path("update_details/", update_details, name="update_details")
+    path("update_details/", update_details, name="update_details"),
+    path("postblogs/", postblogs, name="postblogs"),
+    path("showblogs/", showblogs, name="showblogs"),
+    path("blogs/", blogs, name="allblogs")
 ]
