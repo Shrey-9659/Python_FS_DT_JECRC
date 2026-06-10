@@ -3,23 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>All Blogs</title>
 </head>
 <body>
     <center>
-        <h1>Your blogs</h1>
+        <h1>Your Blogs</h1>
     </center>
+
     <hr>
+
     {% if blogs %}
         {% for blog in blogs %}
-    <div>
-        <strong>Title : </strong> <span>{{blog.title}}</span><br>
-        <strong>Content : </strong> <span>{{blog.content}}</span><br>
-        <strong>Published by : </strong> <span>{{blog.author.first_name}}</span><br>
-        <strong>Published at : </strong> <span>{{ blog.createdAt|date:"d M Y H:i:s" }}</span> 
-    </div>
-    <hr>
+            <div>
+                <strong>Title:</strong>
+                <span>{{ blog.title }}</span>
+                <br>
+
+                <strong>Content:</strong>
+                <span>{{ blog.content }}</span>
+                <br>
+
+                <strong>Published by:</strong>
+                <span>{{ blog.author.first_name }}</span>
+                <br>
+
+                <strong>Published at:</strong>
+                <span>{{ blog.createdAt|date:"d M Y H:i:s" }}</span>
+                <br><br>
+
+                {% if user.is_authenticated %}
+                    <form action="{% url "like_post" blog.id %}" method="post">
+                        {% csrf_token %}
+                        <button type="submit">
+                            {% if  user in blog.likes.all %}
+                            Dislike
+                            {% else %}
+                            Like
+                            {% endif %}
+                            {{blog.likes.count}}
+                        </button>
+                    </form>
+                {% else %}
+                    <form action="/login/">
+                        <button type="submit">Like {{blog.likes.count}}</button>
+                    </form>
+                {% endif %}
+            </div>
+
+            <hr>
         {% endfor %}
+    {% else %}
+        <p>No blogs available.</p>
     {% endif %}
+
 </body>
 </html>

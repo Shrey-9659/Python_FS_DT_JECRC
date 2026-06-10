@@ -33,7 +33,8 @@ urlpatterns = [
     path("update_details/", update_details, name="update_details"),
     path("postblogs/", postblogs, name="postblogs"),
     path("showblogs/", showblogs, name="showblogs"),
-    path("blogs/", blogs, name="allblogs")
+    path("blogs/", blogs, name="allblogs"),
+    path("like/<int:postid>", like_post, name="like_post")
 ] + static(
     settings.MEDIA_URL,
     document_root = settings.MEDIA_ROOT

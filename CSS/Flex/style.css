@@ -1,0 +1,30 @@
+.parent{
+    height: 90vh;
+    width: 90vw;
+    background-color: bisque;
+    border: 2px solid black;
+    display: flex;
+    /* flex-direction: row; */
+    /* flex-direction: column; */
+    /* flex-direction: row-reverse; */
+    /* flex-direction: column-reverse; */
+    /* justify-content: end; */
+    /* align-items: end; */
+    flex-wrap: wrap-reverse;
+}
+
+.child{
+    height: 100px;
+    width: 100px;
+    margin: 0.5rem;
+    background-color: white;
+    border: 2px solid black;
+}
+
+.child1{
+    order: 100;
+}
+
+.child3{
+    order: -1;
+}

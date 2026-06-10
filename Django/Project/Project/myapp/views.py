@@ -1,8 +1,9 @@
-from django.shortcuts import render, HttpResponse, redirect
+from django.shortcuts import render, HttpResponse, redirect, get_object_or_404
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from .models import Postblogs, ProfilePicture
+
 
 
 # ---------------------------
@@ -104,3 +105,14 @@ def showblogs(request):
 def blogs(request):
     all_blogs = Postblogs.objects.all().order_by("-createdAt")
     return render(request, "allblogs.html", {"blogs": all_blogs})
+
+@login_required
+def like_post(request, postid):
+    blog = get_object_or_404(Postblogs, id = postid)
+    if(blog.likes.filter(id = request.user.id).exists()):
+        blog.likes.remove(request.user)
+    else:
+        blog.likes.add(request.user)
+    
+
+    return redirect("allblogs")
