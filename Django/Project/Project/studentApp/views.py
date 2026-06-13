@@ -20,17 +20,17 @@ from .serializers import StudentSerializer
 # Using serializers
 # @api_view(["GET", "POST"])
 # def all_students(request):
-    # if request.method == "GET":
-    #     student_data = Student.objects.all()
-    #     allstudents = StudentSerializer(student_data, many=True)
-    #     return Response(allstudents.data, status=status.HTTP_200_OK)
-    # elif request.method == "POST":
-    #     serializer = StudentSerializer(data = request.data)
-    #     if serializer.is_valid():
-    #         serializer.save()
-    #         return Response(serializer.data, status=status.HTTP_201_CREATED)
-    #     else:
-    #         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+#     if request.method == "GET":
+#         student_data = Student.objects.all()
+#         allstudents = StudentSerializer(student_data, many=True)
+#         return Response(allstudents.data, status=status.HTTP_200_OK)
+#     elif request.method == "POST":
+#         serializer = StudentSerializer(data = request.data)
+#         if serializer.is_valid():
+#             serializer.save()
+#             return Response(serializer.data, status=status.HTTP_201_CREATED)
+#         else:
+#             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         
 # @api_view(["GET", "PUT"])   
 # def get_student(request, pk):
