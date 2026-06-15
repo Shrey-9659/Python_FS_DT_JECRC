@@ -15,19 +15,25 @@ let stop = document.getElementById("stop")
 let reset = document.getElementById("reset")
 let time = 1
 let myTimer;
+let isStartActive = false
 
 start.addEventListener("click", () => {
+    if(isStartActive == false){
+        isStartActive = true
     myTimer = setInterval(() => {
         timer.innerHTML = `Timer : ${time++}`
     },1000)
+}
 })
 
 stop.addEventListener("click", () => {
     clearInterval(myTimer)
+    isStartActive = false
 })
 
 reset.addEventListener("click", () => {
     timer.innerHTML = "Timer : 0"
     clearInterval(myTimer)
     time = 1;
+    isStartActive = false
 })
