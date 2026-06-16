@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: 900px;
+    height: 400px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+
+    display: flex;
+    overflow: hidden;
+}
+
+/* Left Part - 70% */
+.cards-section {
+    flex: 7;
+    padding: 20px;
+
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Cards */
+.card {
+    flex: 1;
+    height: 150px;
+
+    background-color: #4f46e5;
+    color: white;
+
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card h3 {
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* Right Part - 30% */
+.input-section {
+    flex: 3;
+    padding: 20px;
+    background-color: #fafafa;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+}
+
+.input-section textarea {
+    flex: 1;
+    resize: none;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.input-section button {
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: #4f46e5;
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.input-section button:hover {
+    background-color: #4338ca;
+}
+
+#city{
+    border: none;
+    background-color: #e0dddd;
+    height: 50px;
+    border-radius: 10px;
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    font-size: 1.2rem;
+}
