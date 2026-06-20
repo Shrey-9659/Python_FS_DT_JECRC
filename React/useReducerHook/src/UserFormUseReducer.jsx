@@ -8,53 +8,22 @@ const UserFormUseReducer = () => {
         year : ""
       }
       const reducer = (state, action) => {
-        if(action.type == "UPD_NAME"){
+        if(action.type == "UPD"){
             return {
                 ...state,
-                name : action.value
+                [action.field] : action.value
             }
-        }else if(action.type == "UPD_COLLEGE"){
-            return {
-                ...state,
-                college : action.value
-            }
-        }else if(action.type == "UPD_BRANCH"){
-            return {
-                ...state,
-                branch : action.value
-            }
-        }else if(action.type == "UPD_YEAR"){
-            return {
-                ...state,
-                year : action.value
-            }
-        }
       }
+    }
       const [state, dispatch] = useReducer(reducer, initialValue)
-      const handleName = (e) => {
+      const handleChange = (e) => {
         dispatch({
-            type : "UPD_NAME",
+            type : "UPD",
+            field : e.target.name,
             value : e.target.value
         })
       }
-      const handleCollege = (e) => {
-        dispatch({
-            type : "UPD_COLLEGE",
-            value : e.target.value
-        })
-      }
-      const handleBranch = (e) => {
-        dispatch({
-            type : "UPD_BRANCH",
-            value : e.target.value
-        })
-      }
-      const handleYear = (e) => {
-        dispatch({
-            type : "UPD_YEAR",
-            value : e.target.value
-        })
-      }
+      
       const handleSubmit = (e) => {
         e.preventDefault()
         alert(`
@@ -74,7 +43,7 @@ const UserFormUseReducer = () => {
               id=""
               placeholder='Enter Name...'
               value={state.name}
-              onChange={handleName}
+              onChange={handleChange}
               />
               <input
               type="text"
@@ -82,7 +51,7 @@ const UserFormUseReducer = () => {
               id=""
               placeholder='Enter College...'
               value={state.college}
-              onChange={handleCollege}
+              onChange={handleChange}
               />
               <input
               type="text"
@@ -90,7 +59,7 @@ const UserFormUseReducer = () => {
               id=""
               placeholder='Enter Branch...'
               value={state.branch}
-              onChange={handleBranch}
+              onChange={handleChange}
               />
               <input
               type="text"
@@ -98,7 +67,7 @@ const UserFormUseReducer = () => {
               id=""
               placeholder='Enter Year...'
               value={state.year}
-              onChange={handleYear}
+              onChange={handleChange}
               />
               <button type='submit'>Submit</button>
           </form>
