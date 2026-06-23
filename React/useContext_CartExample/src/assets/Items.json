@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "name": "Smartphone",
+    "brand": "Samsung",
+    "model": "Galaxy S24",
+    "price": 799.99
+  },
+  {
+    "id": 2,
+    "name": "Laptop",
+    "brand": "Dell",
+    "model": "XPS 13",
+    "price": 1199.99
+  },
+  {
+    "id": 3,
+    "name": "Tablet",
+    "brand": "Apple",
+    "model": "iPad Air",
+    "price": 599.99
+  },
+  {
+    "id": 4,
+    "name": "Smartwatch",
+    "brand": "Apple",
+    "model": "Watch Series 9",
+    "price": 399.99
+  },
+  {
+    "id": 5,
+    "name": "Bluetooth Speaker",
+    "brand": "JBL",
+    "model": "Flip 6",
+    "price": 129.99
+  },
+  {
+    "id": 6,
+    "name": "Wireless Earbuds",
+    "brand": "Sony",
+    "model": "WF-1000XM5",
+    "price": 299.99
+  },
+  {
+    "id": 7,
+    "name": "Gaming Console",
+    "brand": "Sony",
+    "model": "PlayStation 5",
+    "price": 499.99
+  },
+  {
+    "id": 8,
+    "name": "Monitor",
+    "brand": "LG",
+    "model": "UltraGear 27",
+    "price": 349.99
+  },
+  {
+    "id": 9,
+    "name": "External SSD",
+    "brand": "SanDisk",
+    "model": "Extreme Portable SSD",
+    "price": 159.99
+  },
+  {
+    "id": 10,
+    "name": "Wireless Router",
+    "brand": "TP-Link",
+    "model": "Archer AX55",
+    "price": 149.99
+  }
+]
