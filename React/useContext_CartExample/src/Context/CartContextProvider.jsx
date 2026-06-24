@@ -5,7 +5,27 @@ const CartContextProvider = ({children}) => {
     const [cart,setCart] = useState([])
 
     const addToCart = (product) => {
-        setCart([...cart, product])
+        const exist = cart.find((item) => {
+            return item.id === product.id
+        })
+        if(!exist){
+            setCart([
+                ...cart,
+                {
+                    ...product,
+                    quantity : 1
+                }
+            ])
+        }else{
+            setCart([
+                ...cart,
+                {
+                    ...product,
+                    quantity : product.quantity + 1
+                }
+            ])
+        }
+        
     }
 
     const totalBill = cart.reduce((total, item) => {

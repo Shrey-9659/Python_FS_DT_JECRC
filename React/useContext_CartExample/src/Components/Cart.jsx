@@ -3,6 +3,7 @@ import CartContext from '../Context/CartContext'
 
 const Cart = () => {
     const {cart, totalBill} = useContext(CartContext)
+    console.log(cart)
   return (
     <div>
         <center>
