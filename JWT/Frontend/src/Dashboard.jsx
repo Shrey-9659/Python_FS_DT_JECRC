@@ -1,7 +1,27 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Dashboard.css";
+import { useNavigate } from "react-router-dom";
 
 function Dashboard() {
+    const token = localStorage.getItem("accessToken")
+    const navigate = useNavigate()
+
+    useEffect(() => {
+        fetch("http://localhost:8000/dashboard/", {
+            method: "POST", 
+            headers: {
+                "content-type" : "application/json",
+                "Authorization" : `Bearer ${token}`
+            },
+        }).then(rawData => rawData.json())
+        .then(res => console.log(res))
+    }, [])
+
+    const handleLogout = () => {
+        localStorage.removeItem("accessToken")
+        navigate("/login")
+    }
+
   return (
     <div className="dashboard">
       {/* Sidebar */}
@@ -14,7 +34,7 @@ function Dashboard() {
           <li>📚 Courses</li>
           <li>📊 Reports</li>
           <li>⚙️ Settings</li>
-          <li>🚪 Logout</li>
+          <li onClick={handleLogout}>🚪 Logout</li>
         </ul>
       </aside>
 

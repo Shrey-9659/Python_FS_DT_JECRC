@@ -4,6 +4,8 @@ from rest_framework.response import Response
 from rest_framework.permissions import AllowAny
 from rest_framework import status
 from .serializer import UserSerializer
+from rest_framework.permissions import IsAuthenticated
+
 
 # Create your views here.
 
@@ -20,3 +22,9 @@ def register(request):
         else:
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         
+@api_view(["POST", "GET"])
+@permission_classes([IsAuthenticated])
+def dashboard(request):
+    if(request.method == "POST"):
+        print(request.user)
+        return Response({"message" : "Login Successful"})
