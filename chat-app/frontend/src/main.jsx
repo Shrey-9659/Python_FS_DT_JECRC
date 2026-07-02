@@ -8,8 +8,3 @@ createRoot(document.getElementById('root')).render(
     <App />
   </StrictMode>,
 )
-
-
-{/* <main className="pt-16 min-h-[calc(100vh-4rem)]">
-        <p>Lorem ipsum dolor sit amet.</p>
-    </main> */}

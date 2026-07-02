@@ -1,0 +1,6 @@
+.mainPage{
+    padding-top: 16px;
+    min-height: calc(100vh - 4rem);
+}
+
+/* pt-16 min-h-[calc(100vh - 4rem)] */

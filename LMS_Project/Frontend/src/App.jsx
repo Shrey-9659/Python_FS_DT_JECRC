@@ -1,15 +1,24 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
 // import './App.css'
 
-function App(){
-  return(
-    <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
-  )
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Footer from "./Components/Footer";
+import LandingPage from "./Components/LandingPage";
+import Navbar from "./Components/Navbar";
+import Layout from "./Components/Layout";
+
+function App() {
+  return (
+    <div className="App">
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route path="/" element={<LandingPage />} />
+            <Route path="/" element={<h1>404 : PAGE NOT FOUND</h1>} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </div>
+  );
 }
 
-export default App
+export default App;
