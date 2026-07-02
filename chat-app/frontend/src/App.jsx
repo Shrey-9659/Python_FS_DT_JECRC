@@ -4,6 +4,7 @@ import "./App.css"
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Layout from './Layout'
 import Register from './Register'
+import Chat from './Chat'
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
         <Route path='/' element={<Layout />}>
           <Route path='/' element={<Login />}/>
           <Route path='/register' element={<Register />}/>
+          <Route path='/chat' element={<Chat />}/>
           <Route path='*' element={<Login />}/>
         </Route>
       </Routes>
